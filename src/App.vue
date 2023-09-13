@@ -1,41 +1,30 @@
-<script setup>
+<script>
+import TaskList from "./components/task-list.vue";
+export default {
+  name: 'App',
+  components: { TaskList },
+  data() {
+    return {
+      tasks: [
+        { id: 1, title: 'Prepare Final Project Status',
+          completed: false},
+        { id: 2, title: 'Study Web Apps', completed: false},
+        { id: 3, title: 'Do laundry', completed: false},
+        { id: 4, title: 'Cook breakfast', completed: false},
+        { id: 5, title: 'Learn Vue', completed: false}
+      ]
+    }
+  }
+}
+
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-    </div>
-  </header>
-
-  <main>
-  </main>
+  <div id="app">
+    <task-list v-bind:tasks="tasks"/>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
