@@ -1,9 +1,9 @@
 <script>
 import TaskList from "./components/task-list.vue";
-import AddTask from "./components/add-task.vue";
+import AddTask from "@/components/add-task.vue";
 export default {
   name: 'App',
-  components: { TaskList },
+  components: {AddTask, TaskList },
   data() {
     return {
       tasks: [
