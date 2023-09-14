@@ -1,5 +1,6 @@
 <script>
 import TaskList from "./components/task-list.vue";
+import AddTask from "./components/add-task.vue";
 export default {
   name: 'App',
   components: { TaskList },
@@ -14,7 +15,13 @@ export default {
         { id: 5, title: 'Learn Vue', completed: false}
       ]
     }
+  },
+  methods: {
+    addTask(newTask) {
+      this.tasks.push(newTask);
+    }
   }
+
 }
 
 </script>
@@ -22,6 +29,8 @@ export default {
 <template>
   <div id="app">
     <task-list v-bind:tasks="tasks"/>
+    <add-task v-on:add-task="addTask"/>
+
   </div>
 </template>
 
